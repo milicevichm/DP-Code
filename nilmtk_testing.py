@@ -1,8 +1,6 @@
 # Import the classes and modules to be used for processing energy dataset
-from numpy import *
-from nilmtk import *
-from nilm_metadata import *
+from nilmtk.datastore import *
 
-# First TO-DO: figure out how to load hdf data from the REDD dataset into the program
-
+#load .hdf REDD Data
+redd_data = HDFDataStore("C:/NILM/Data_Sets/redd_data.hdf")
 
