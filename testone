@@ -1,0 +1,31 @@
+# Import the classes and modules to be used for processing energy dataset
+from __future__ import print_function, division
+from nilmtk import HDFDataStore, DataSet
+from nilmtk.disaggregate import CombinatorialOptimisation
+from nilmtk.plots import plot_series
+import pandas as pd
+import matplotlib.pyplot as plt
+
+print("Loading data.... \n")
+
+#declare and load HDF data (REDD)
+redd_datastore = HDFDataStore("C:/NILM/Data_Sets/redd_data.h5")
+
+#declare dataset
+sample_dataset = DataSet()
+
+#load datastore into dataset
+sample_dataset.load(redd_datastore)
+
+#load first building
+meters = sample_dataset.buildings[1].elec
+
+print("Sucessfully loaded. \n")
+
+#get power series of meters
+
+
+#close datasets and program
+redd_datastore.close()
+print("Program Closed.")
+
