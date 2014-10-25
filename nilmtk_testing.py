@@ -44,11 +44,10 @@ disag_dataset.load(output)
 elec = disag_dataset.buildings[1].elec
 good_sections = elec.mains().good_sections()
 
-redd_datastore.store.get('/building1/elec/meter1')["2011-05-01 10:00":"2011-05-01 12:00"].plot()
+
+
+output.store.get('/building1/elec/meter5')["2011-05-01":"2011-05-01 12:00"].plot()
 plt.show()
-
-#output.store.get('/building1/elec/meter5')["2011-05-01":"2011-05-01 12:00"].plot()
-
 
 #close datastore object 
 print("Program finished")

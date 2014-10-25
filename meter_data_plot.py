@@ -11,21 +11,14 @@ print("Loading data.... \n")
 #declare and load HDF data (REDD)
 redd_datastore = HDFDataStore("C:/NILM/Data_Sets/redd_data.h5")
 
-#declare dataset
-sample_dataset = DataSet()
-
-#load datastore into dataset
-sample_dataset.load(redd_datastore)
-
-#load first building
-meters = sample_dataset.buildings[1].elec
-
 print("Sucessfully loaded. \n")
 
-#get power series of meters
+#load meter 1 instance in bulding 1 instance and plot (returned object is of type: meterGroup)
+redd_datastore.store.get('/building1/elec/meter1').plot()
 
+#show the plot
+plt.show()
 
-#close datasets and program
-redd_datastore.close()
+#close program
 print("Program Closed.")
-
+redd_datastore.close()
