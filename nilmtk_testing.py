@@ -5,6 +5,7 @@ from nilmtk.disaggregate import CombinatorialOptimisation
 import pandas as pd
 import matplotlib.pyplot as plt
 
+"""
 print("Loading data.... \n")
 
 #declare and load HDF data (REDD)
@@ -36,7 +37,7 @@ output = HDFDataStore('C:/NILM/output.h5','w')
 print("Disaggregation")
 co.disaggregate(mains,output)
 
-output.store.get("/building1/elec/meter3")[:10]
+output.store.get('/building1/elec/meter3')[:10]
 
 disag_dataset = DataSet()
 disag_dataset.load(output)
@@ -45,11 +46,14 @@ elec = disag_dataset.buildings[1].elec
 good_sections = elec.mains().good_sections()
 
 
-
-output.store.get('/building1/elec/meter5')["2011-05-01":"2011-05-01 12:00"].plot()
+redd_datastore.store.get('/building1/elec/meter1')["2011-05-01 10:00":"2011-05-01 12:00"].plot()
+output.store.get('/building1/elec/meter1')["2011-05-01":"2011-05-01 12:00"].plot()
 plt.show()
 
 #close datastore object 
 print("Program finished")
 redd_datastore.close()
 output.close()
+"""
+
+print(dir(plt))

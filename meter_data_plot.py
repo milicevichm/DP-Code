@@ -1,4 +1,4 @@
-# Import the classes and modules to be used for processing energy dataset
+#Import the classes and modules to be used for processing energy dataset
 from __future__ import print_function, division
 from nilmtk import HDFDataStore, DataSet
 from nilmtk.disaggregate import CombinatorialOptimisation
@@ -18,6 +18,8 @@ redd_datastore.store.get('/building1/elec/meter1').plot()
 
 #show the plot
 plt.show()
+
+#print(redd_datastore._keys())
 
 #close program
 print("Program Closed.")
